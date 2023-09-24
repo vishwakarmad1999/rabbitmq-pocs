@@ -65,6 +65,8 @@ It also first establishes the connection as done by the producer. You'll notice 
 
 To listen to messages on a specific queue, we create a callback, that has 4 parameters, and the last one is the **message**. Just like you used `basic_publish` in the producer, we'll use `basic_consume` in the consumer. This statement would bind a queue with a callback.
 
+Manual message acknowledgements are turned on by default. We have explicitly turned it off using `auto_ack=True`. More on this [Tutorial 2](/tutorial-2/README.md)
+
 ```py
 def callback(ch, method, properties, message):
     print(f" [x] Recieved '{message}' ✅")
@@ -72,7 +74,7 @@ def callback(ch, method, properties, message):
 channel.basic_consume(
     queue=queue_name,
     on_message_callback=callback,
-    auto_ack=True,
+    auto_ack=True, 
 )
 ```
 
