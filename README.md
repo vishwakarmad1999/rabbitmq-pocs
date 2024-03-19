@@ -9,7 +9,7 @@ To get started with this repository, make sure you have RabbitMQ installed in yo
 docker pull rabbitmq
 
 # Run the container as a daemon
-docker run -dp 5672:5672 --hostname myrmq --name rmq rabbitmq
+docker run -dp 5672:5672 --name rmq rabbitmq
 ```
 
 After you have the RabbitMQ container running in your system, create a virtual environment for the Python modules, mainly **pika**. The python library, pika, provides us the APIs to interact with RabbitMQ.
